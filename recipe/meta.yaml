@@ -1,18 +1,18 @@
 {% set name = "py-tes" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 4df33583889ddb166b7b1a0ee3ededcfe1f550ce79506f4d1715db91edb8ac02
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: f6926cd59b7dfc8e37840955bf1cc7c43ad4d99ba5eae100b6156c918617472c
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -34,11 +34,11 @@ test:
     - tes
 
 about:
-  home: "https://github.com/ohsu-comp-bio/py-tes"
+  home: https://github.com/ohsu-comp-bio/py-tes
   license: MIT
   license_family: MIT
-  license_file: '{{ RECIPE_DIR }}/LICENSE'
-  summary: "Library for communicating with the GA4GH Task Execution API"
+  license_file: {{ RECIPE_DIR }}/LICENSE
+  summary: Library for communicating with the GA4GH Task Execution API
   dev_url: https://github.com/ohsu-comp-bio/py-tes
 
 extra:
